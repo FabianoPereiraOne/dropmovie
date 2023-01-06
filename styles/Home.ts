@@ -50,7 +50,7 @@ export const H2 = styled.h2`
 export const Span = styled.span`
   color: ${colors.red_light};
 `
-export const Link = styled.a<{ theme?: number }>`
+export const Link = styled.a<{ theme?: number; margin?: string }>`
   width: 290px;
   height: 50px;
   border-radius: 10px;
@@ -83,6 +83,8 @@ export const Link = styled.a<{ theme?: number }>`
       filter: brightness(1);
     }
   `}
+
+  ${props => props.margin && `margin: ${props.margin};`}
 `
 
 export const About = styled.main`
@@ -126,6 +128,20 @@ export const Tests = styled.section`
   align-items: center;
   justify-content: center;
   background-color: ${colors.black_light};
+
+  & p {
+    margin: 16px 0 20px 0;
+  }
 `
-export const Input = styled.input``
+export const Input = styled.input`
+  width: 290px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 20px 0 0 0;
+  background-color: ${colors.gray_dark};
+  color: ${colors.white};
+  border: none;
+  padding: 8px;
+  outline: none;
+`
 export const Footer = styled.footer``

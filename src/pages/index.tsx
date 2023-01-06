@@ -42,7 +42,7 @@ export default function Home() {
         </Paragraph>
         <Input type="text" name="name" title='Digite seu nome completo' placeholder='Nome Completo' maxLength={40} />
         <Input type="email" name="email" title='Digite seu E-mail' placeholder='Email' maxLength={40} />
-        <Link href="#" title="Enviar Mensagem">Enviar Mensagem</Link>
+        <Link margin="24px auto 36px auto" href="#" title="Enviar Mensagem">Enviar Mensagem</Link>
       </Tests>
       {/* <Footer>
           <Paragraph>&copy; Copyright 2023</Paragraph>
