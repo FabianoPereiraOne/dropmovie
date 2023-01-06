@@ -50,9 +50,7 @@ export const H2 = styled.h2`
 export const Span = styled.span`
   color: ${colors.red_light};
 `
-export const Link = styled.a<{
-  theme?: number
-}>`
+export const Link = styled.a<{ theme?: number }>`
   width: 290px;
   height: 50px;
   border-radius: 10px;
@@ -87,10 +85,47 @@ export const Link = styled.a<{
   `}
 `
 
-export const H3 = styled.h3``
-export const About = styled.section``
+export const About = styled.main`
+  width: 100%;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+export const H3 = styled.h3`
+  font-size: ${sizes.size20};
+  font-weight: 600;
+  color: ${colors.white};
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: ${colors.red_light};
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translate(-50%, -50%);
+  }
+`
 export const Paragraph = styled.p`
   max-width: 100%;
+  margin: 16px 0 0 0;
+  text-align: center;
+  font-size: ${sizes.size14};
+  color: ${colors.white};
+  font-weight: 400;
 `
-export const Tests = styled.section``
+export const Tests = styled.section`
+  width: 100%;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ${colors.black_light};
+`
+export const Input = styled.input``
 export const Footer = styled.footer``
