@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import {
-  About, Banner, H1, H2, H3,
+  About, Banner, Footer, H1, H2, H3,
   Header, Img, Input, Link,
   Logo, Paragraph, Span, Tests
 } from '../../styles/Home'
@@ -44,10 +44,10 @@ export default function Home() {
         <Input type="email" name="email" title='Digite seu E-mail' placeholder='Email' maxLength={40} />
         <Link margin="24px auto 36px auto" href="#" title="Enviar Mensagem">Enviar Mensagem</Link>
       </Tests>
-      {/* <Footer>
-          <Paragraph>&copy; Copyright 2023</Paragraph>
-          <Paragraph>By Team DropMovie</Paragraph>
-        </Footer> */}
+      <Footer>
+        <Paragraph>&copy; Copyright 2023</Paragraph>
+        <Paragraph>By Team DropMovie</Paragraph>
+      </Footer>
     </>
   )
 }
