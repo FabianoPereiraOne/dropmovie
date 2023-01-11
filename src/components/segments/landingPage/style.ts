@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll'
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import sizes from '../../../../styles/sizes'
@@ -60,7 +61,7 @@ export const Form = styled.form`
   justify-content: center;
 `
 
-export const Link = styled.a<{ theme?: number; margin?: string }>`
+export const LinkRedirect = styled(Link)<{ theme?: number; margin?: string }>`
   width: 290px;
   height: 50px;
   border-radius: 10px;
@@ -74,6 +75,7 @@ export const Link = styled.a<{ theme?: number; margin?: string }>`
   color: ${colors.white};
   font-weight: 500;
   transition: 0.3s;
+  cursor: pointer;
 
   ${props =>
     props.theme === 2
@@ -137,7 +139,7 @@ export const ButtonSubmit = styled.button<{ margin?: string }>`
 
 export const About = styled.main`
   width: 100%;
-  padding: 36px;
+  padding: 72px 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,7 +172,7 @@ export const Paragraph = styled.p`
 `
 export const Tests = styled.section`
   width: 100%;
-  padding: 36px;
+  padding: 72px 36px;
   display: flex;
   flex-direction: column;
   align-items: center;

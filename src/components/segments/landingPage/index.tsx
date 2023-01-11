@@ -4,7 +4,7 @@ import banner from '../../../assets/Banner.png'
 import logo from '../../../assets/Logo.png'
 import {
     About, Banner, ButtonSubmit, Footer, Form, H1, H2, H3,
-    Header, Img, Input, InputInvisible, Link,
+    Header, Img, Input, InputInvisible, LinkRedirect,
     Logo, Paragraph, Span, Tests
 } from './style'
 
@@ -31,16 +31,16 @@ export default function LandingPage() {
             <Banner img={banner.src}>
                 <H2><Span>Drop</Span>Movie</H2>
                 <H1>Chega de filmes e Series esquecidas</H1>
-                <Link href="#testes" title="link para Participar dos testes">Participar dos testes</Link>
-                <Link theme={2} href="#about" title="link de Saiba mais">Saiba mais</Link>
+                <LinkRedirect smooth={true} to="tests" title="link para Participar dos testes">Participar dos testes</LinkRedirect>
+                <LinkRedirect smooth={true} theme={2} to="about" title="link de Saiba mais">Saiba mais</LinkRedirect>
             </Banner>
-            <About>
+            <About id="about">
                 <H3>Sobre</H3>
                 <Paragraph>
                     DropMovie foi concebida como um diário de filmes e séries virtuais, permitindo aos usuários criarem, interagirem e compartilharem seus conteúdos de entretenimento preferidos com amigos. Além disso, usuários podem usufruir dos melhores recursos, como criar listas de reprodução para melhor organização, participarem de interações engraçadas em seus capítulos de diário e muito mais.
                 </Paragraph>
             </About>
-            <Tests>
+            <Tests id="tests">
                 <H3>Testes</H3>
                 <Paragraph>
                     Nos convidamos você a embarcar em uma jornada memorável! Estamos criando uma plataforma maravilhosa que mudará o campo cinematográfico. Você se juntaria a nós?
