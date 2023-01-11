@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { colors } from './colors'
-import sizes from './sizes'
+import { colors } from '../../../../styles/colors'
+import sizes from '../../../../styles/sizes'
 
 export const Header = styled.header`
   max-width: 100%;
@@ -50,6 +50,16 @@ export const H2 = styled.h2`
 export const Span = styled.span`
   color: ${colors.red_light};
 `
+
+export const Form = styled.form`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
 export const Link = styled.a<{ theme?: number; margin?: string }>`
   width: 290px;
   height: 50px;
@@ -64,6 +74,44 @@ export const Link = styled.a<{ theme?: number; margin?: string }>`
   color: ${colors.white};
   font-weight: 500;
   transition: 0.3s;
+
+  ${props =>
+    props.theme === 2
+      ? `
+    margin: 20px auto 0 auto;
+    background: none;
+    border: 1px solid ${colors.white};
+
+    &:hover{
+      background: ${colors.white};
+      color: ${colors.black};
+    }
+  `
+      : `
+    filter: brightness(0.9);
+    &:hover{
+      filter: brightness(1);
+    }
+  `}
+
+  ${props => props.margin && `margin: ${props.margin};`}
+`
+
+export const ButtonSubmit = styled.button<{ margin?: string }>`
+  width: 290px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  background-color: ${colors.red_light};
+  color: ${colors.white};
+  font-weight: 500;
+  transition: 0.3s;
+  border: none;
 
   ${props =>
     props.theme === 2
@@ -133,7 +181,7 @@ export const Tests = styled.section`
     margin: 16px 0 20px 0;
   }
 `
-export const Input = styled.input`
+export const Input = styled.input<{ style?: string }>`
   width: 290px;
   height: 50px;
   border-radius: 10px;
@@ -143,6 +191,10 @@ export const Input = styled.input`
   border: none;
   padding: 8px;
   outline: none;
+`
+
+export const InputInvisible = styled.input`
+  display: none !important;
 `
 export const Footer = styled.footer`
   width: 100%;
