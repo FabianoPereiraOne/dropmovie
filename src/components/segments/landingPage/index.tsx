@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { toast } from 'react-toastify'
 import banner from '../../../assets/Banner.png'
 import logo from '../../../assets/Logo.png'
 import {
@@ -8,6 +9,11 @@ import {
 } from './style'
 
 export default function LandingPage() {
+
+    const handlerSendNotify = () => {
+        toast.success('Ficamos contentes por seu interesse! Entraremos em contato logo.')
+    }
+
     return (
         <>
             <Head>
@@ -39,15 +45,15 @@ export default function LandingPage() {
                 <Paragraph>
                     Nos convidamos você a embarcar em uma jornada memorável! Estamos criando uma plataforma maravilhosa que mudará o campo cinematográfico. Você se juntaria a nós?
                 </Paragraph>
-                <Form action="https://api.staticforms.xyz/submit" method="POST">
+                <Form action="https://api.staticforms.xyz/submit" method="post">
                     <Input type="text" name="name" title='Digite seu nome completo' placeholder='Nome Completo' maxLength={40} />
                     <Input type="email" name="email" title='Digite seu E-mail' placeholder='Email' maxLength={40} />
                     <InputInvisible type="text" name="honeypot" />
                     <InputInvisible type="hidden" name="accessKey" value={process.env.NEXT_PUBLIC_EMAILCMS_KEY} />
                     <InputInvisible type="hidden" name="subject" value="Novo contato no DropMovie!!" />
                     <InputInvisible type="hidden" name="replyTo" value="@" />
-                    <InputInvisible type="hidden" name="redirectTo" value="http://dropmovie.vercel.app/" />
-                    <ButtonSubmit margin="24px auto 36px auto" title="Enviar Mensagem">Enviar Mensagem</ButtonSubmit>
+                    <InputInvisible type="hidden" name="redirectTo" value="https://dropmovie.vercel.app/" />
+                    <ButtonSubmit onSubmit={handlerSendNotify} margin="24px auto 36px auto" title="Enviar Mensagem">Enviar Mensagem</ButtonSubmit>
                 </Form>
             </Tests>
             <Footer>
