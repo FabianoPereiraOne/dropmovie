@@ -1,14 +1,16 @@
 import Head from 'next/head'
+import { useMediaQuery } from 'react-responsive'
 import { toast } from 'react-toastify'
-import banner from '../../../assets/Banner.png'
 import logo from '../../../assets/Logo.png'
+import { BannerDesktop } from '../../organisms/BannerDesktop'
+import { BannerMobile } from '../../organisms/BannerMobile'
 import {
-    About, Banner, ButtonSubmit, Footer, Form, H1, H2, H3,
-    Header, Img, Input, InputInvisible, LinkRedirect,
-    Logo, Paragraph, Span, Tests
+    About, ButtonSubmit, Footer, Form, H3,
+    Header, Img, Input, InputInvisible, Logo, Paragraph, Tests
 } from './style'
 
 export default function LandingPage() {
+    const isMobile = useMediaQuery({ query: '(max-width: 1024px)' })
 
     const handlerSendNotify = () => {
         toast.success('Ficamos contentes por seu interesse! Entraremos em contato logo.')
@@ -28,12 +30,7 @@ export default function LandingPage() {
                     <Img src={logo.src} alt="Logo" title="Logo" />
                 </Logo>
             </Header>
-            <Banner img={banner.src}>
-                <H2><Span>Drop</Span>Movie</H2>
-                <H1>Chega de filmes e Series esquecidas</H1>
-                <LinkRedirect smooth={true} to="tests" title="link para Participar dos testes">Participar dos testes</LinkRedirect>
-                <LinkRedirect smooth={true} theme={2} to="about" title="link de Saiba mais">Saiba mais</LinkRedirect>
-            </Banner>
+            {isMobile ? <BannerMobile /> : <BannerDesktop />}
             <About id="about">
                 <H3>Sobre</H3>
                 <Paragraph>
