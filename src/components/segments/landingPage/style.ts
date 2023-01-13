@@ -14,11 +14,15 @@ export const Header = styled.header`
   top: 36px;
 `
 export const Logo = styled.a`
-  max-width: 62px;
+  width: 62px;
   text-decoration: none;
+
+  @media screen and (min-width: 768px) {
+    width: 100px;
+  }
 `
 export const Img = styled.img`
-  max-width: 100%;
+  width: 100%;
 `
 
 export const Banner = styled.div<{ img: string }>`
@@ -41,12 +45,22 @@ export const H1 = styled.h1`
   text-transform: capitalize;
   margin: 0 0 20px 0;
   max-width: 175px;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${sizes.size24};
+    max-width: 250px;
+    margin: 0 0 30px 0;
+  }
 `
 export const H2 = styled.h2`
   font-size: ${sizes.size32};
   text-transform: uppercase;
   margin: 30px 0 8px 0;
   color: ${colors.white};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${sizes.size48};
+  }
 `
 export const Span = styled.span`
   color: ${colors.red_light};
@@ -97,6 +111,11 @@ export const LinkRedirect = styled(Link)<{ theme?: number; margin?: string }>`
   `}
 
   ${props => props.margin && `margin: ${props.margin};`}
+  @media screen and (min-width: 768px) {
+    font-size: ${sizes.size20};
+    width: 290px;
+    height: 70px;
+  }
 `
 
 export const ButtonSubmit = styled.button<{ margin?: string }>`
@@ -135,15 +154,25 @@ export const ButtonSubmit = styled.button<{ margin?: string }>`
   `}
 
   ${props => props.margin && `margin: ${props.margin};`}
+  @media screen and (min-width: 768px) {
+    font-size: ${sizes.size20};
+    width: 290px;
+    height: 70px;
+  }
 `
 
 export const About = styled.main`
   width: 100%;
+  height: auto;
   padding: 72px 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    min-height: 40vh;
+  }
 `
 export const H3 = styled.h3`
   font-size: ${sizes.size20};
@@ -161,6 +190,10 @@ export const H3 = styled.h3`
     bottom: -5px;
     transform: translate(-50%, -50%);
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: ${sizes.size36};
+  }
 `
 export const Paragraph = styled.p`
   max-width: 100%;
@@ -169,6 +202,12 @@ export const Paragraph = styled.p`
   font-size: ${sizes.size14};
   color: ${colors.white};
   font-weight: 400;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${sizes.size20};
+    max-width: 600px;
+    margin: 32px 0 0 0;
+  }
 `
 export const Tests = styled.section`
   width: 100%;
@@ -182,6 +221,10 @@ export const Tests = styled.section`
   & p {
     margin: 16px 0 20px 0;
   }
+
+  @media screen and (min-width: 768px) {
+    min-height: 40vh;
+  }
 `
 export const Input = styled.input<{ style?: string }>`
   width: 290px;
@@ -193,6 +236,13 @@ export const Input = styled.input<{ style?: string }>`
   border: none;
   padding: 8px;
   outline: none;
+
+  @media screen and (min-width: 768px) {
+    width: 450px;
+    height: 70px;
+    font-size: ${sizes.size16};
+    padding: 8px 16px;
+  }
 `
 
 export const InputInvisible = styled.input`
@@ -225,5 +275,17 @@ export const Footer = styled.footer`
 
   & p:last-child {
     color: ${colors.gray};
+  }
+
+  @media screen and (min-width: 768px) {
+    & p:first-child {
+      font-size: ${sizes.size20};
+      margin: 0;
+    }
+
+    & p:last-child {
+      font-size: ${sizes.size16};
+      margin: 15px 0 0 0;
+    }
   }
 `
