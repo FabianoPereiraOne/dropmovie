@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import { useMediaQuery } from 'react-responsive'
+import background from '../../../assets/film.png'
 import logo from '../../../assets/Logo.png'
 import { H3, Paragraph } from '../../atoms/global'
 import { BannerDesktop } from '../../organisms/BannerDesktop'
 import { BannerMobile } from '../../organisms/BannerMobile'
 import { SectionTests } from '../../organisms/SectionTests'
 import {
-    About, Footer,
+    About, Content, Footer,
     Header, Img, Logo
 } from './style'
 
@@ -28,10 +29,10 @@ export default function LandingPage() {
                 </Logo>
             </Header>
             {isMobile ? <BannerMobile /> : <BannerDesktop />}
-            <About id="about">
-                <H3>Sobre</H3>
+            <About id="about" styleBackground={background.src}>
+                <Content><H3>Sobre</H3></Content>
                 <Paragraph>
-                    DropMovie foi concebida como um diário de filmes e séries virtuais, permitindo aos usuários criarem, interagirem e compartilharem seus conteúdos de entretenimento preferidos com amigos. Além disso, usuários podem usufruir dos melhores recursos, como criar listas de reprodução para melhor organização, participarem de interações engraçadas em seus capítulos de diário e muito mais.
+                    DropMovie foi concebida como um diário de filmes e séries virtuais, permitindo aos usuários criarem, interagirem e compartilharem seus conteúdos de entretenimento preferidos com amigos. Além disso, usuários podem usufruir dos melhores recursos, como criar listas de reprodução para melhor organização, participarem de interações em seus capítulos de diário e muito mais.
                 </Paragraph>
             </About>
             {isMobile && <SectionTests />}

@@ -85,7 +85,7 @@ export const LineSubmit = styled.div`
 `
 export const ButtonSubmit = styled.button`
   width: 180px;
-  height: 50px;
+  height: 52px;
   background: ${colors.red_normal};
   color: ${colors.white};
   border: none;

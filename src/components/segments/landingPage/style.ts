@@ -39,7 +39,7 @@ export const H1 = styled.h1`
   }
 `
 
-export const About = styled.main`
+export const About = styled.main<{ styleBackground: string }>`
   width: 100%;
   height: auto;
   padding: 72px 36px;
@@ -51,6 +51,26 @@ export const About = styled.main`
   @media screen and (min-width: 768px) {
     min-height: 40vh;
   }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 40vh;
+    border-top: 7px solid ${colors.white};
+    border-bottom: 7px solid ${colors.white};
+    align-items: flex-start;
+    padding: 72px 123px;
+
+    background: url(${props => props.styleBackground});
+    background-position: right bottom -30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+`
+
+export const Content = styled.div`
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const Footer = styled.footer`
