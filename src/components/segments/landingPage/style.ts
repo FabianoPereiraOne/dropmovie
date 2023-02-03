@@ -67,10 +67,13 @@ export const About = styled.main<{ styleBackground: string }>`
 `
 
 export const Content = styled.div`
-  width: 600px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 1440px) {
+    width: 600px;
+  }
 `
 
 export const Footer = styled.footer`
